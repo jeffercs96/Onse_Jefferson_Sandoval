@@ -1,0 +1,47 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button>
+            <i onclick="gallery()"  style="margin-top: 15px;"></i>
+          </ons-toolbar-button>
+        </div>
+  
+        <div style="text-align: center;" class="toolbar__center toolbar--material__center">
+          Camera
+        </div>
+  
+        <div class="right">
+          <ons-toolbar-button>
+            <i onclick="galleryV()"  style="margin-top: 15px;"></i>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+<div style="background-color: rgb(116, 82, 238);text-align: center;height: 100%;">
+    
+        <div style="width: 100%;padding-top: 10%;height:80%;">
+            <div class="card"
+                style="height: 40%;background-color: lightcyan;width: 80%;margin: auto;border: 1px solid blanchedalmond;padding: 10px;">
+                <div id=pic style="text-align: center;">
+                    
+                    <div id="img"></div>
+                </div>
+            </div>
+            <button class="button button--material" onclick="snapPicture()" style="margin-top: 3%;">Tomar Foto</button>
+            
+            <button class="button button--material" onclick="gallery()" style="margin-top: 3%;" >Ver fotos</button>
+            <div style="height: 5%;"></div>
+            <div class="card"
+                style="height: 40%;background-color: lightcyan;width: 80%;margin: auto;border: 1px solid blanchedalmond;padding: 10px;">
+                <div id="wea" style="text-align: center;">                   
+                    <div id="VIDEO"></div>
+                </div>
+            </div>
+            <button class="button button--material" onclick="takeVideo()" style="margin-top: 3%;" >Realizar Video</button>
+            
+            <button class="button button--material" onclick="galleryV()" style="margin-top: 3%;" >Ver videos</button>
+
+        </div>
+    
+    </div>
+
+</ons-page>

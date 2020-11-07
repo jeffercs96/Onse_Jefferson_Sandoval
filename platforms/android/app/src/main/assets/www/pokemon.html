@@ -1,0 +1,62 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button>
+                <i onclick="gallery()" style="margin-top: 15px;"></i>
+            </ons-toolbar-button>
+        </div>
+
+        <div style="text-align: center;" class="toolbar__center toolbar--material__center">
+            API Pokemon
+        </div>
+
+        <div class="right">
+            <ons-toolbar-button>
+                <i onclick="galleryV()" style="margin-top: 15px;"></i>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    </div>
+    <img src="img/logo2.png" class="logo" alt="">
+    <div class="contenedor" id="test">
+        <input type="text" id="caja" placeholder="Ingrese el número de pokémon">
+        <button class="button button--material" id="button">Buscar</button>
+        <div id="imagencont"></div>
+        <p id="info" class="text-white"></p>
+    </div>
+
+    <script>
+        let buton=document.getElementById('button')
+
+        buton.addEventListener('click',()=>{
+
+            let div = document.getElementById('imagencont')
+            if (document.getElementById("imagenpokemon")!=null) {
+                div.removeChild(document.getElementById("imagenpokemon"))
+            }
+            
+            let caja=document.getElementById('caja').value
+            let img=document.createElement('img')
+            let p=document.getElementById('info')
+            
+
+            let xhttp=new XMLHttpRequest()
+            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
+            xhttp.send()
+
+            xhttp.onreadystatechange=function () {
+                if(this.readyState==4 && this.status==200)
+                {
+                let datoPokemon=JSON.parse( this.responseText)
+                //alert(datoPokemon.sprites.front_default)
+                img.setAttribute("id","imagenpokemon")
+                img.setAttribute("src",datoPokemon.sprites.front_default)
+                
+                div.appendChild(img)
+                p.textContent=datoPokemon.name
+                }
+            }
+
+        })
+    </script>
+</ons-page>
